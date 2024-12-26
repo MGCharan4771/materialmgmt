@@ -1,0 +1,73 @@
+<mvc:View controllerName="materialmgmt.controller.View1" xmlns:f="sap.f" xmlns:filterbar="sap.ui.comp.filterbar"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+   <f:DynamicPage>
+        <f:title>
+            <f:DynamicPageTitle >
+                <f:heading>
+                    <Title text="{i18n>title}"></Title>
+                </f:heading>
+            </f:DynamicPageTitle>
+        </f:title>
+        <f:header>
+            <f:DynamicPageHeader >
+                <f:content>
+                    <filterbar:FilterBar search="onpressGo" >
+                        <filterbar:filterGroupItems>
+                            <filterbar:FilterGroupItem visibleInFilterBar="true" label="Material Number" name="Material Number" groupName="Group1">
+                                <filterbar:control>
+                                    <Input id="idProductId" ></Input>
+                                </filterbar:control>
+                            </filterbar:FilterGroupItem>
+                        </filterbar:filterGroupItems>
+                    </filterbar:FilterBar>
+                </f:content>
+            </f:DynamicPageHeader>
+        </f:header>
+        <f:content>
+            <Table id="idTable" items="{TableModel>/results}" mode="SingleSelectLeft">
+                <headerToolbar>
+                    <OverflowToolbar >
+                        <Title text="Material Details"></Title>
+                        <ToolbarSpacer ></ToolbarSpacer>
+                        <Button text="Create" type="Emphasized" press="onPressCreate" icon="sap-icon://add"></Button>
+                        <Button text="Update" type="Emphasized" press="onPressUpdate" icon="sap-icon://refresh"></Button>
+                        <Button text="Delete" press="onPressDelete" icon="sap-icon://delete" type="Reject"></Button>
+                    </OverflowToolbar>
+                </headerToolbar>
+                <columns>
+                    <Column>
+                        <Text text="Material Number"></Text>
+                    </Column>
+                    <Column >
+                        <Text text="Description"></Text>
+                    </Column>
+                    <Column >
+                        <Text text="Material Type"></Text>
+                    </Column>
+                    <Column >
+                        <Text text="Industry"></Text>
+                    </Column>
+                    <Column>
+                        <Text text="Material Group"></Text>
+                    </Column>
+                    <Column >
+                        <Text text="Net Weight"></Text>
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem type="Active" press="onPressRow">
+                        <cells>
+                            <Text text="{TableModel>MatNo}"></Text>
+                            <Text text="{TableModel>MatDes}"></Text>
+                            <Text text="{TableModel>MatType}"></Text>
+                            <Text text="{TableModel>Mbrsh}"></Text>
+                            <Text text="{TableModel>Matkl}"></Text>
+                            <Text text="{TableModel>Ntgew}"></Text>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </f:content>
+    </f:DynamicPage>
+</mvc:View>

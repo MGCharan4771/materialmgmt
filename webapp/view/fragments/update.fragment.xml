@@ -1,0 +1,27 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form" >
+
+    <Dialog title="Update Record" >
+        <form:SimpleForm layout="ResponsiveLayout" >
+            <form:content>
+                <Label text="Material Number"></Label>
+                <Input id="idUpdateMatNo" editable="false"></Input>
+                <Label text="Material Desc"></Label>
+                <Input id="idUpdateMatDesc"></Input>
+                <Label text="Material Type"></Label>
+                <Input id="idUpdateMatType"></Input>
+                <Label text="Industry"></Label>
+                <Input id="idUpdateIndustry"></Input>
+                <Label text="Material Group"></Label>
+                <Input id="idUpdateMatGrp"></Input>
+                <Label text="Net Weight"></Label>
+                <Input id="idUpdateNetWgt"></Input>
+
+            </form:content>
+        </form:SimpleForm>
+        <buttons>
+            <Button text="Update" press="onPressUpdateRecord"></Button>
+            <Button text="Cancel" press="onPressUpdateCancel"></Button>
+        </buttons>
+    </Dialog>
+
+</core:FragmentDefinition>

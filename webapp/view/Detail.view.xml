@@ -1,0 +1,75 @@
+<mvc:View controllerName="materialmgmt.controller.Detail" xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m" xmlns:form="sap.ui.layout.form">
+    <Page title="Details of a Record" showNavButton="true" navButtonPress="onPressNavBack">
+        <content>
+            <form:SimpleForm editable="true" title="Enter Details to Create" layout="ColumnLayout"
+                emptySpanL="2" emptySpanXL="2" emptySpanM="2" columnsM="2" columnsL="2" columnsXL="2" >
+                <form:content>
+                    <Label text="Material Number"></Label>
+                    <Input value="{DetailModel>/MatNo}"></Input>
+                    <Label text="Material Description"></Label>
+                    <Input value="{DetailModel>/MatDes}"></Input>
+                    <Label text="Material Type"></Label>
+                    <Input value="{DetailModel>/MatType}"></Input>
+                    <Label text="Industry"></Label>
+                    <Input value="{DetailModel>/Mbrsh}"></Input>
+                    <Label text="Material Group"></Label>
+                    <Input value="{DetailModel>/Matkl}"></Input>
+                    <Label text="Base Unit"></Label>
+                    <Input value="{DetailModel>/Meins}"></Input>
+                    <Label text="Volume"></Label>
+                    <Input value="{DetailModel>/Volum}"></Input>
+                    <Label text="Unit of Weight"></Label>
+                    <Input value="{DetailModel>/Gewei}"></Input>
+                    <Label text="Volume Unit"></Label>
+                    <Input value="{DetailModel>/Voleh}"></Input>
+                    <Label text="Prod. Hierarchy"></Label>
+                    <Input value="{DetailModel>/Prdha}"></Input>
+                    <Label text="Net Weight"></Label>
+                    <Input value="{DetailModel>/Ntgew}"></Input>
+                    <Label text="Create Date"></Label>
+                    <DatePicker dateValue="{DetailModel>/Ersda}"></DatePicker>
+                </form:content>
+            </form:SimpleForm>
+
+            <Table items="{DetailModel>/tomattransdet/results}" headerText="Line Item Details" >
+                <columns>
+                    <Column >
+                        <Text text="Material"></Text>
+                    </Column>
+                    <Column >
+                        <Text text="Storage Conditions"></Text>
+                    </Column>
+                    <Column >
+                        <Text text="Transport Group"></Text>
+                    </Column>
+                    <Column >
+                        <Text text="Supply source"></Text>
+                    </Column>
+                    <Column >
+                        <Text text="Package Material Type source"></Text>
+                    </Column>
+                    <Column >
+                        <Text text="Net Contents"></Text>
+                    </Column>
+                    <Column >
+                        <Text text="Manufacturer"></Text>
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem >
+                        <cells>
+                            <Text text="{DetailModel>MatNo}"></Text>
+                            <Text text="{DetailModel>Raube}"></Text>
+                            <Text text="{DetailModel>Tragr}"></Text>
+                            <Text text="{DetailModel>Bwscl}"></Text>
+                            <Text text="{DetailModel>Vhart}"></Text>
+                            <Text text="{DetailModel>Inhal}"></Text>
+                            <Text text="{DetailModel>Mfrnr}"></Text>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>

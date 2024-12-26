@@ -1,0 +1,87 @@
+<mvc:View controllerName="materialmgmt.controller.Create" xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m" xmlns:form="sap.ui.layout.form">
+    <Page title="Create a Record" showNavButton="true" navButtonPress="onPressNavBack">
+        <content>
+            <form:SimpleForm editable="true" title="Enter Details to Create" layout="ColumnLayout"
+                emptySpanL="2" emptySpanXL="2" emptySpanM="2" columnsM="2" columnsL="2" columnsXL="2" >
+                <form:content>
+                    <Label text="Material Description"></Label>
+                    <Input id="idCreateMatDesc" value="{CreateModel>/MatDes}"></Input>
+                    <Label text="Material Type"></Label>
+                    <Input id="idCreateMatType" value="{CreateModel>/MatType}"></Input>
+                    <Label text="Industry"></Label>
+                    <Input id="idCreateIndustry" value="{CreateModel>/Mbrsh}"></Input>
+                    <Label text="Material Group"></Label>
+                    <Input id="idCreateMatGrp" value="{CreateModel>/Matkl}"></Input>
+                    <Label text="Base Unit"></Label>
+                    <Input id="idCreateBaseUnit" value="{CreateModel>/Meins}"></Input>
+                    <Label text="Volume"></Label>
+                    <Input id="idCreateVolume" value="{CreateModel>/Volum}"></Input>
+                    <Label text="Unit of Weight"></Label>
+                    <Input id="idCreateUOW" value="{CreateModel>/Gewei}"></Input>
+                    <Label text="Volume Unit"></Label>
+                    <Input id="idCreateVolUnit" value="{CreateModel>/Voleh}"></Input>
+                    <Label text="Prod. Hierarchy"></Label>
+                    <Input id="idCreatePrdHier" value="{CreateModel>/Prdha}"></Input>
+                    <Label text="Net Weight"></Label>
+                    <Input id="idCreateNetWeight" value="{CreateModel>/Ntgew}"></Input>
+                    <Label text="Create Date"></Label>
+                    <DatePicker dateValue="{CreateModel>/Ersda}"></DatePicker>
+                </form:content>
+            </form:SimpleForm>
+
+            <Table items="{CreateLineItemModel>/aLineItems}" >
+                <headerToolbar>
+                    <OverflowToolbar >
+                        <Title text="Line Item Details"></Title>
+                        <ToolbarSpacer ></ToolbarSpacer>
+                        <Button text="Add" type="Emphasized" press="onPressAdd"></Button>
+                    </OverflowToolbar>
+                </headerToolbar>
+                <columns>
+                    <Column >
+                        <Text text="Storage Conditions"></Text>
+                    </Column>
+                    <Column >
+                        <Text text="Transport Group"></Text>
+                    </Column>
+                    <Column >
+                        <Text text="Supply source"></Text>
+                    </Column>
+                    <Column >
+                        <Text text="Package Material Type"></Text>
+                    </Column>
+                    <Column >
+                        <Text text="Net Contents"></Text>
+                    </Column>
+                    <Column >
+                        <Text text="Manufacturer"></Text>
+                    </Column>
+                    <Column >
+                        <Text text="Delete"></Text>
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem >
+                        <cells>
+                            <Input value="{CreateLineItemModel>Raube}"></Input>
+                            <Input value="{CreateLineItemModel>Tragr}"></Input>
+                            <Input value="{CreateLineItemModel>Bwscl}"></Input>
+                            <Input value="{CreateLineItemModel>Vhart}"></Input>
+                            <Input value="{CreateLineItemModel>Inhal}"></Input>
+                            <Input value="{CreateLineItemModel>Mfrnr}"></Input>
+                            <Button icon="sap-icon://delete" press="onPressDelete"></Button>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+        <footer>
+            <Bar >
+                <contentRight>
+                    <Button text="Create" press="onPressCreate"></Button>
+                </contentRight>
+            </Bar>
+        </footer>
+    </Page>
+</mvc:View>
